@@ -1,0 +1,69 @@
+<link href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+
+<table id="statusTable" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>사이트이름</th>
+                
+                <th>마지막 크롤링 시각</th>
+                <th>마지막 업데이트 시각</th>
+                <th>데이터 갯수</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>http://www.hlsc.co.kr</td>
+                <td>2016-05-10</td>
+                <td>2016-05-10</td>
+                <td><%= data.length %></td>
+            </tr>
+        </tbody>
+        
+</table>
+
+<table id="dataTable" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>상품이름</th>
+                <th>가격</th>
+                <th>브랜드</th>
+                
+                <th>규격</th>
+                
+                <th>등록일</th>
+            </tr>
+        </thead>
+        <tbody>
+                <% for(var i=0; i<data.length; i++) {%>
+                    <tr>
+                        <td><%= data[i].I_NAME %></td>
+                        <td><%= data[i].RETAIL_PRC %></td>
+                        <td><%= data[i].BRAND_NAME %></td>
+                        
+                        <td><%= data[i].SPEC %></td>
+                        
+                        <td><%= data[i].REG_DATE %></td>
+                    </tr>
+                <% } %>
+        </tbody>
+        
+</table>
+
+<ul>
+
+</ul>
+
+
+<script   src="https://code.jquery.com/jquery-1.12.3.min.js"   integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ="   crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function(){
+    $('#statusTable').DataTable();
+    $('#dataTable').DataTable();
+});
+    
+</script>
+
+ 
